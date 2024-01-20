@@ -1,27 +1,139 @@
+@font-face {
+  font-family: "SFProBold";
+  src: local("SFProBold"),
+   url("../public/SF-Pro-Display-Bold.otf") format("truetype");
+  font-weight: bolder;
+ }
+@font-face {
+  font-family: "BlackerPro";
+  src: local("BlackerPro"),
+   url("../public/Blacker-Pro.ttf") format("truetype");
+  font-weight: bolder;
+ }
+ @font-face {
+  font-family: "AoenikLight";
+  src: url(../public/AeonikTRIAL-Light.otf)format('opentype');;
+}
+@font-face {
+  font-family: "AoenikRegular";
+  src: url(../public/AeonikTRIAL-Regular.otf)format('opentype');;
+}
+@font-face {
+  font-family: "AoenikBold";
+  src: url(../public/AeonikTRIAL-Bold.otf)format('opentype');;
+}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Exo+2:wght@600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.sfProBold {
+  font-family: "SFProBold";
+}
+.blackerPro{
+  font-family: "BlackerPro";
+  font-weight: 900;
+}
+.Exo{
+  font-family: 'Exo 2', sans-serif;
+}
+.AoenikRegular{
+  font-family: "AoenikRegular";
+}
+.AoenikBold{
+  font-family: "AoenikBold";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.shad{
+  box-shadow:0px  25px 50px rgba(29,29,29,.1);
+}
+.shad5{
+  box-shadow:0px  25px 50px rgba(29,29,29,.05);
+}
+.shad10{
+  box-shadow:0px  4px 8px rgba(29,29,29,.2);
+}
+.logotext{
+  text-shadow: 0px 2px 4px rgba(0,0,0, .05);
+
+}
+.mContainer{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader {
+  position: absolute;
+  text-align: center;    
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  top: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+}
+.mContainer h2{
+  text-shadow: none;
+}
+
+.loader span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 23px;
+  height: 23px;
+  background: black;
+  border-radius: 20px;
+  animation: loader 0.8s infinite alternate;
+  margin-right: 2px;
+}
+.loader span:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.loader span:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+@keyframes loader {
+0% {
+  opacity: 0.9;
+  transform: scale(0.5);
+}
+100% {
+  opacity: 0.1;
+  transform: scale(1);
+}
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.rotate-image {
+  animation: rotate 1s linear infinite;
+}
+
+.stat{
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  align-items: center;
+  gap: 7px;
+}
+.stat:hover{
+  transform: scaleX(1.03);
+  transition: all .5s;
+
 }

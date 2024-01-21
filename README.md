@@ -77,6 +77,12 @@ Before you begin, ensure you have the following tools installed on your machine:
 
 
 ```bash
+# Firstly
+
+npm install
+
+# Secondly
+
 npm run dev
 # or
 yarn dev

@@ -114,7 +114,6 @@ useEffect(() => {
     setSelTitle(order.title);
     setSelDueDate(order.date)
     setSelStatus(order.status)
-    console.log(selStatus);
     setSelDescription(order.description)
   }
 

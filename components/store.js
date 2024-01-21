@@ -12,18 +12,14 @@ const useStore = create((set) => ({
   ] ,
 
 
-  setJobArray: (value) => {
-    set(() => {
-      return { jobArray: value };
-    });
+  setJobArray: (newJobArray) => {
+    set({ jobArray: newJobArray });
   },
 
   RToggle: false,
 
   setRToggle: (value) => {
-    set(() => ({
-      RToggle: value,
-    }));
+    set({ RToggle: value });
   },
 
   }));

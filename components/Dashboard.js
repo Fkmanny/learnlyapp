@@ -83,12 +83,17 @@ useEffect(() => {
           arrayEl.push(order);
         }
       }
+      if (status === 'All') {
+          arrayEl.push(order);
+      }
+
     });
     setFilteredArray(arrayEl);
     setFilterPopup(false)
   }
 
   const addTask = (e) => {
+    setFilteredArray('');
     e.preventDefault();
     const idNo = jobArray2.length + 1;
     const newArr = { id: idNo, title: newTitle, description: newDescription, status: newStatus, date: newDueDate };
@@ -114,6 +119,7 @@ useEffect(() => {
   }
 
   const updateEdits = (e) => {
+    setFilteredArray('');
     e.preventDefault();
         // const updatedArray = [...jobArray2.slice(0, indexToUpdate), ...jobArray2.slice(indexToUpdate + 1)];
         const indexNo = jobArray2.length - idNo;
@@ -125,7 +131,6 @@ useEffect(() => {
         }
       jobArray2[indexNo] = { id: idNo, title: selTitle, description: selDescription, status: statusEl, date: selDueDate };
       
-console.log(selStatus);
     setJobArray(jobArray2);
     setEditDeletePopup(false);
     toast.success("Task Updated")
@@ -135,6 +140,7 @@ console.log(selStatus);
   }
 
   const deleteTasks = (e) => {
+    setFilteredArray('');
     e.preventDefault();
         // const updatedArray = [...jobArray2.slice(0, indexToUpdate), ...jobArray2.slice(indexToUpdate + 1)];
         const indexNo = jobArray2.length - idNo;
@@ -150,7 +156,16 @@ console.log(selStatus);
   }
   
 
-    
+  const notifications = () => {
+    toast('Zero notifications', {
+      icon: '🔔',
+    });
+  }
+  const account = () => {
+    toast("Creating users wasn't requested for", {
+      icon: '👨‍💻',
+    });
+  }
 
   return (
     <div className='w-full relative xl:w-3/4  flex flex-col '>
@@ -165,9 +180,9 @@ console.log(selStatus);
 
       </div>
       <div className='flex flex-row items-center'>
-        <FaBell color='gray' size={25} className='hidden sm:block mr-2 sm:mr-6 cursor-pointer' />
-        <FaBell color='gray' size={20} className='block sm:hidden mr-2 sm:mr-6 cursor-pointer' />
-        <div onClick={() => {toggleclick()}} className='flex flex-row rounded-xl sm:rounded-3xl p-2 sm:p-3 bg-gray-100 hover:shad5 cursor-pointer'>
+        <FaBell onClick={() => {notifications()}} color='gray' size={25} className='hidden sm:block mr-2 sm:mr-6 hover:scale-105 duration-300 cursor-pointer' />
+        <FaBell onClick={() => {notifications()}} color='gray' size={20} className='block sm:hidden mr-2 sm:mr-6 hover:shadow-md cursor-pointer' />
+        <div onClick={() => {account()}} className='flex flex-row rounded-xl sm:rounded-3xl p-2 sm:p-3 bg-gray-100 hover:shadow-md duration-300 cursor-pointer'>
           <img alt='profilePic' src={'/user-1.png'} style={{borderRadius:'50%', width: '50px', height: '50px'}} className='hidden sm:block' width={50} height={50}/>
           <img alt='profilePic' src={'/user-1.png'} style={{borderRadius:'50%', width: '27px', height: '27px'}} className='block sm:hidden h-1/2' width={27} height={27}/>
           <span className='ml-2 sm:ml-3 flex flex-col'>
@@ -282,7 +297,8 @@ console.log(selStatus);
             <form onSubmit={statusFilter} className='absolute right-0 lg:left-24 bottom-5 top-auto z-[8] lg:top-36 bg-white h-fit w-full lg:w-[28%] py-4 lg:py-8 px-2 lg:px-5 rounded-xl' style={{boxShadow:'0px 25px 50px rgba(29,29,29,.1)'}}>
                 <h1 className='text-xl md:text-2xl ml-1 mb-1 font-bold'>Filter by Status</h1>
                 <select value={status} onChange={(e) => setStatus(e.target.value)} className='w-full px-2 lg:px-3 py-2 lg:py-3.5 border-2 rounded-md my-2 lg:my-4' name='cityArea' required>
-                    <option value='' disabled>
+                  <option value='' disabled></option>
+                    <option>
                       All
                     </option>
                       <option>Pending</option>

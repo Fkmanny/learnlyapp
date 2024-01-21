@@ -28,6 +28,19 @@ const Home = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const navButton = () => {
+    toast.error('You only requested for the Dashboard')
+  }
+  const navButtonX = () => {
+    toast.success('You are currently on the Dashboard')
+  }
+  const logOut = () => {
+    toast('Logging out from where?', {
+      icon: '👀',
+    });
+  }
+
+
 
 
   return (
@@ -47,11 +60,11 @@ const Home = () => {
                 </div> 
                 <div className='w-9/12 mx-auto font-semibold mt-8 xl:mt-20'>
                   <ul >
-                    <li className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><FaHome size={21} /> Home</li>
-                    <li className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><RxDashboard size={21} /> Dashboard</li>
-                    <li className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><FaRegCalendarDays size={21}/> Courses</li>
-                    <li className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><TiDocumentText size={21}/> History</li>
-                    <li className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><FaRegUser size={21}/> Account</li>
+                    <li onClick={navButton} className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><FaHome size={21} /> Home</li>
+                    <li onClick={navButtonX} className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><RxDashboard size={21} /> Dashboard</li>
+                    <li onClick={navButton} className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><FaRegCalendarDays size={21}/> Courses</li>
+                    <li onClick={navButton} className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><TiDocumentText size={21}/> History</li>
+                    <li onClick={navButton} className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-1.5'><FaRegUser size={21}/> Account</li>
                   </ul>
                 </div>
 
@@ -59,7 +72,7 @@ const Home = () => {
 
                 <div className='w-9/12 mx-auto mt-1.5 font-semibold xl:mt-[11.8rem]'>
                   <ul >
-                    <li className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-2'><TbLogout size={21}/> Log out</li>
+                    <li onClick={logOut} className='cursor-pointer flex flex-row AoenikRegular text-lg items-center gap-10 p-2 pl-3 rounded-lg hover:bg-[#ffffff30] text-gray-800 xl:text-white opacity-95 mb-2'><TbLogout size={21}/> Log out</li>
                   </ul>
                 </div>
             </div>

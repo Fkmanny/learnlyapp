@@ -1,6 +1,8 @@
 ## Teachmate AI Dashboard
 
-This repository contains the source code for the Teachmate AI dashboard, a web application built with React. The dashboard allows users to manage tasks, view statistics, and perform various actions related to course management.
+This repository contains the source code for the Teachmate AI dashboard, a web application built with React. The dashboard allows users to manage tasks, view statistics, and perform various actions related to course management. The design was inspired by a past project i've worked on. I love how fluid the dashboard was and easy to use and understand.
+
+
 
 Project Live link : [`Teachmateai`](https://learnlyfakoyaemmanuelteachmateai.netlify.app/)
 
@@ -25,7 +27,7 @@ The Teachmate AI dashboard provides the following features:
 - Responsive design for various screen sizes.
 - Feel free to explore the dashboard and customize it according to your needs.
 
-## Tech Stack Used:
+## Tech Stack / Dependencies Used:
 
 - React
 - Next JS

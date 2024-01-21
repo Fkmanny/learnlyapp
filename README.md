@@ -42,7 +42,7 @@ The Teachmate AI dashboard provides the following features:
 Note:
 - Sel = Selected.
 - The tasks are saved in Zustands state management system
-- jobArray is the state management Array name for the tasks, JobArray2 is a clone created of JobArray.
+- jobArray is the state management Array name for the tasks, JobArray2 is a clone created from JobArray.
 
 Task List:
 - A list of tasks containing Title, description, status, due date was was created in the Dashboard Component Line 274. I created it using a table to ensure a seamless data structure.

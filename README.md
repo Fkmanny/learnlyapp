@@ -2,7 +2,7 @@
 
 This repository contains the source code for the Teachmate AI dashboard, a web application built with React. The dashboard allows users to manage tasks, view statistics, and perform various actions related to course management.
 
-Project Live link : [`Teachmateai`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+Project Live link : [`Teachmateai`](https://learnlyfakoyaemmanuelteachmateai.netlify.app/)
 
  ## Folder Structure
 The project has the following folder structure:
@@ -25,13 +25,13 @@ The Teachmate AI dashboard provides the following features:
 - Responsive design for various screen sizes.
 - Feel free to explore the dashboard and customize it according to your needs.
 
-Tech Stack Used:
+## Tech Stack Used:
 
 - React
 - Next JS
 - Zustand State management system
 - Tailwind CSS
-- react-hot-toast 
+- react-hot-toast (for quick and fluid notifications popups)
 - React-Icons
 
 
@@ -68,12 +68,20 @@ Responsive Design:
 State Management:
 I used Zustand's Management System cause it's more efficient and easy to use.
 
+## Extra 
+There is are Task statistics card that displays the computation of the tasks, Total tasks, Total Pending, Total completed and Total percentage score.
+It's in the dashboard component Line 207 and the functionality is a useEffect that gets the information from the Task array on line 47.
+
+The left sidebar on mobile view isn't visible but visible when you click on the the profile card 'Wande coal' lol.
+
 PREREQUISITES
 Before you begin, ensure you have the following tools installed on your machine:
 
 - Node.js
 - npm (Node Package Manager)
 - Getting Started
+- Clone the repository
+- Then run the following in the terminal : 
 
 
 ```bash

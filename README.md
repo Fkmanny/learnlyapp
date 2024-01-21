@@ -16,7 +16,7 @@ store: Zustand store for managing the application state.
 README.md: Project documentation.
 
 
-## USAGE
+## Usage
 The Teachmate AI dashboard provides the following features:
 
 -  Display of total tasks, pending tasks, completed tasks, and overall completion score.
@@ -69,7 +69,7 @@ State Management:
 I used Zustand's Management System cause it's more efficient and easy to use.
 
 ## Extra 
-There is are Task statistics card that displays the computation of the tasks, Total tasks, Total Pending, Total completed and Total percentage score.
+There are Task statistic cards that displays the computation of the tasks, Total tasks, Total Pending, Total completed and Total percentage score.
 It's in the dashboard component Line 207 and the functionality is a useEffect that gets the information from the Task array on line 47.
 
 The left sidebar on mobile view isn't visible but visible when you click on the the profile card 'Wande coal' lol.
